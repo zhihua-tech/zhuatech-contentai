@@ -10,3 +10,4 @@
 | GET | `/api/shopfloor/dashboard` | 内容创作者工作台 |
 | POST | `/api/shopfloor/work-orders/{id}/reports` | 提交内容审核记录 |
 | POST | `/api/shopfloor/ai-preview` | 调用可替换内容 AI Provider |
+| POST | `/api/shopfloor/content-review` | 发布前检查隐私、禁用词和事实引用完整性 |

@@ -47,3 +47,7 @@ cd frontend && npm install && npm run dev:demo
 | ![知华科技微信咨询二维码一](docs/images/zhuatech-wechat-consulting.png) | ![知华科技微信咨询二维码二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 SEO 关键词：AI 内容生成系统源码、企业内容中台、品牌内容审核、生成式 AI 平台、Java ContentAI、Vue 内容管理、知华科技。
+
+## 内容事实依据质量
+
+新增 `POST /api/contentai/insights/grounding-quality`，检查事实主张引用、可信来源、来源矛盾和 AI 内容披露，输出 `PUBLISH`、`REVIEW` 或 `BLOCK`。

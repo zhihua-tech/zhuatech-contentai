@@ -51,3 +51,7 @@ SEO 关键词：AI 内容生成系统源码、企业内容中台、品牌内容�
 ## 内容事实依据质量
 
 新增 `POST /api/contentai/insights/grounding-quality`，检查事实主张引用、可信来源、来源矛盾和 AI 内容披露，输出 `PUBLISH`、`REVIEW` 或 `BLOCK`。
+
+## 多渠道内容发布治理
+
+`POST /api/enterprise/contentai/publication-governance` 在发布前计算事实主张证据覆盖率，并校验禁止性宣传、品牌、版权、个人信息、未成年人保护、人工审批和 AI 内容披露，输出 `PUBLISH / REVIEW / BLOCKED`。

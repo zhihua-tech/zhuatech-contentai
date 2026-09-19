@@ -8,9 +8,16 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 在内容发布前检查隐私、禁用词和事实引用完整性。 */
+/**
+ * 在内容发布前检查隐私、禁用词和事实引用完整性。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ContentReviewService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public ReviewResult review(ReviewRequest request) {
         int uncitedClaims = Math.max(0, request.factualClaims() - request.citedClaims());
         List<String> reasons = new ArrayList<>();
@@ -27,6 +34,9 @@ public class ContentReviewService {
             "PASS".equals(decision) ? "允许进入发布队列" : "BLOCK".equals(decision) ? "完成脱敏和禁用词整改后重审" : "补充来源引用后提交人工复核");
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ReviewRequest(
         @NotBlank(message = "请输入待审核内容") String content,
         @NotBlank(message = "请输入发布渠道") String channel,
@@ -35,10 +45,16 @@ public class ContentReviewService {
         @PositiveOrZero int factualClaims,
         @PositiveOrZero int citedClaims
     ) {
+        /**
+         * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+         */
         public ReviewRequest {
             prohibitedTerms = prohibitedTerms == null ? List.of() : List.copyOf(prohibitedTerms);
         }
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ReviewResult(String decision, int riskScore, int uncitedClaims, List<String> reasons, String nextAction) {}
 }

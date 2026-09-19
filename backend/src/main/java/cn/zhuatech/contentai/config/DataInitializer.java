@@ -1,7 +1,13 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.contentai.config;
 import cn.zhuatech.contentai.model.*; import cn.zhuatech.contentai.repository.*; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.*; import org.springframework.security.crypto.password.PasswordEncoder; import java.time.LocalDate; import java.util.List;
-@Configuration public class DataInitializer {@Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository records,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
+@Configuration public class DataInitializer {/**
+                                              * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                              */
+@Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository records,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
  OperatingUnit brand=units.save(new OperatingUnit("CNT-BRAND","新品营销空间","品牌市场部",2000)),growth=units.save(new OperatingUnit("CNT-GROWTH","用户增长空间","会员运营部",1500)),industry=units.save(new OperatingUnit("CNT-INDUSTRY","行业营销空间","解决方案部",1000));
  WorkRecord a=records.save(new WorkRecord("CNT-260801-118","CAMPAIGN-AUTUMN-NPI","秋季新品全渠道上市内容包",brand,86,72,4,LocalDate.now().plusDays(1),WorkRecord.Status.RUNNING,"BRAND-V4.6")); WorkRecord b=records.save(new WorkRecord("CNT-260801-096","CAMPAIGN-MEMBER-DAY","会员日社媒短内容组合",growth,48,48,1,LocalDate.now(),WorkRecord.Status.COMPLETED,"SOCIAL-V3.1")); WorkRecord c=records.save(new WorkRecord("CNT-260801-126","CONTENT-WHITEPAPER","行业解决方案白皮书摘要",industry,24,18,3,LocalDate.now().plusDays(3),WorkRecord.Status.RELEASED,"LONGFORM-V2.2"));
  resources.saveAll(List.of(new ResourceRegister("BRAND-CN-001","知华品牌内容空间",brand,ResourceRegister.Status.RUNNING,96),new ResourceRegister("PRODUCT-002","产品事实与卖点库",growth,ResourceRegister.Status.RUNNING,91),new ResourceRegister("LEGAL-003","合规与禁用表达库",industry,ResourceRegister.Status.ALARM,78)));

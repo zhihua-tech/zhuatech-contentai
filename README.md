@@ -1,5 +1,7 @@
 # ZhuaTech ContentAI
 
+[简体中文](README.md) | [English](README.en.md)
+
 ## 企业智能内容生产与合规平台
 
 创作效率、品牌一致性和内容安全不应彼此牺牲。ZhuaTech ContentAI 把企业知识、生成式 AI、素材版权和多级审核连接为可管理的内容生产线。
